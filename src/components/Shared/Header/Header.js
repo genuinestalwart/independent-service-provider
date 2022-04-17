@@ -5,7 +5,6 @@ import { useLocation } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import useAuth from '../../../hooks/useAuth';
 import CustomLink from '../CustomLink/CustomLink';
-import './Header.css';
 
 const Header = () => {
     const location = useLocation();

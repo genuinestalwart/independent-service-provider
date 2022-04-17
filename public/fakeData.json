@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Product Review",
+        "price": "$10",
+        "description": "Actual price depends on the total sale of the product and can be customized. But minimum price is $10.",
+        "image": "https://img.freepik.com/free-vector/illustrated-blogger-making-review_23-2148520398.jpg"
+    },
+    {
+        "name": "Sponsored Video",
+        "price": "$5",
+        "description": "Actual price depends on the total profit and can be customized. But minimum price is $5.",
+        "image": "https://img.freepik.com/free-vector/demand-analysts-shaking-hands-from-laptops-screens-planning-future-demand-demand-planning-demand-analytics-digital-sales-forecast-concept-illustration_335657-2098.jpg"
+    },
+    {
+        "name": "Charity Stream",
+        "price": "5%",
+        "description": "Fund raising, collab streaming and donation. Price depends on the total earned amount.",
+        "image": "https://img.freepik.com/free-vector/volunteers-collecting-goods-charity-into-huge-donation-box-donating-coins-into-jar-donation-charity-donation-funds-gift-kind-concept-pinkish-coral-bluevector-isolated-illustration_335657-1387.jpg"
+    },
+    {
+        "name": "Promotional Stream",
+        "price": "10%",
+        "description": "Promoting a youtube channel. Price is negotiable.",
+        "image": "https://img.freepik.com/free-vector/video-blogger-composition-with-desktop-computer-human-character-surrounded-by-financial-icons-signs-vector-illustration_1284-66573.jpg"
+    }
+]
