@@ -16,10 +16,10 @@ import User from './components/User/User';
 
 function App() {
 	return (
-		<div className="App" style={{ textAlign: 'center' }}>
+		<div className="App">
 			<Header></Header>
 
-			<main style={{ marginTop: '2rem' }}>
+			<main>
 				<Routes>
 					<Route path='/' element={<div>
 						<Banner></Banner>
