@@ -5,7 +5,7 @@ import auth from '../../firebase.init';
 import useAuth from '../../hooks/useAuth';
 
 const Register = () => {
-    const { email, validEmail, setEmail, handleEmail, password, validPass, setPassword, handlePass, navigate } = useAuth();
+    const { email, validEmail, setEmail, handleEmail, password, validPass, setPassword, handlePass, navigate, setUser } = useAuth();
     const location = useLocation();
 
     const handleRegister = (event) => {
@@ -13,7 +13,8 @@ const Register = () => {
 
         if (email && password && validEmail && validPass) {
             createUserWithEmailAndPassword(auth, email, password)
-                .then(() => {
+                .then((credentials) => {
+                    setUser(credentials.user);
                     navigate(location.state?.from?.pathname || '/checkout', { replace: true });
                     setEmail('');
                     setPassword('');

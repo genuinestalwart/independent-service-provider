@@ -1,4 +1,4 @@
-import { onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import auth from "../firebase.init";
@@ -41,18 +41,6 @@ const useAuth = () => {
         }
     };
 
-    const login = () => {
-        if (email && password && validEmail && validPass) {
-            signInWithEmailAndPassword(auth, email, password)
-                .then(() => {
-                    // console.log(location);
-                    // navigate(location?.state?.from?.pathname || '/', { replace: true });
-                    setEmail('');
-                    setPassword('');
-                });
-        }
-    };
-
     const logOut = () => {
         signOut(auth).then(() => {
             navigate('/', { replace: true });
@@ -61,13 +49,12 @@ const useAuth = () => {
 
     return {
         user, setUser,
-        navigate, email,
-        setEmail, password,
-        setPassword, validEmail,
-        setValidEmail, validPass,
-        setValidPass, handleEmail,
-        handlePass, login,
-        logOut
+        email, setEmail,
+        password, setPassword,
+        validEmail, setValidEmail,
+        validPass, setValidPass,
+        handleEmail, handlePass,
+        navigate, logOut
     };
 };
 

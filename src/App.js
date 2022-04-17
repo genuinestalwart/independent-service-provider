@@ -12,6 +12,7 @@ import Register from './components/Register/Register';
 import RequireAuth from './components/RequireAuth/RequireAuth';
 import Footer from './components/Shared/Footer/Footer';
 import Header from './components/Shared/Header/Header';
+import User from './components/User/User';
 
 function App() {
 	return (
@@ -31,6 +32,7 @@ function App() {
 					<Route path='/about' element={<About></About>}></Route>
 					<Route path='/login' element={<Login></Login>}></Route>
 					<Route path='/register' element={<Register></Register>}></Route>
+					<Route path='/user' element={<RequireAuth><User></User></RequireAuth>}></Route>
 				</Routes>
 			</main>
 
