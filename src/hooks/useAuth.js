@@ -4,9 +4,11 @@ import { useNavigate } from "react-router-dom";
 import auth from "../firebase.init";
 
 const useAuth = () => {
-    const [user, setUser] = useState({});
     const navigate = useNavigate();
+    const [user, setUser] = useState({});
+    const [error, setError] = useState('');
     const [email, setEmail] = useState('');
+    const [verified, setVerified] = useState(false);
     const [password, setPassword] = useState('');
     const [validEmail, setValidEmail] = useState(true);
     const [validPass, setValidPass] = useState(true);
@@ -16,6 +18,7 @@ const useAuth = () => {
     useEffect(() => {
         onAuthStateChanged(auth, u => {
             setUser(u);
+            setVerified(u?.emailVerified);
         });
     }, []);
 
@@ -53,6 +56,8 @@ const useAuth = () => {
         password, setPassword,
         validEmail, setValidEmail,
         validPass, setValidPass,
+        verified, setVerified,
+        error, setError,
         handleEmail, handlePass,
         navigate, logOut
     };

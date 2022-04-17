@@ -5,7 +5,7 @@ import auth from '../../firebase.init';
 import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
-    const { email, validEmail, setEmail, handleEmail, password, validPass, setPassword, handlePass, navigate, setUser } = useAuth();
+    const { email, validEmail, setEmail, handleEmail, password, validPass, setPassword, handlePass, error, setError, navigate, setUser } = useAuth();
     const location = useLocation();
 
     const handleLogin = (event) => {
@@ -18,6 +18,11 @@ const Login = () => {
                     navigate(location?.state?.from?.pathname || '/checkout', { replace: true });
                     setEmail('');
                     setPassword('');
+                })
+                .catch((error) => {
+                    if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password') {
+                        setError('Invalid email or password!');
+                    }
                 });
         }
     };
@@ -30,6 +35,7 @@ const Login = () => {
                 <label htmlFor="userPass">Password</label><br />
                 <input onBlur={handlePass} type="password" name="userPass" id="userPass" /><br />
                 <button onClick={handleLogin} type="submit">Log in</button>
+                <p>{error}</p>
             </form>
         </div>
     );
