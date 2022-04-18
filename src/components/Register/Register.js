@@ -76,7 +76,7 @@ const Register = ({ registered, setRegistered, setUser }) => {
 
     return (
         <div>
-            <div className='flex justify-center mb-8'>
+            <div className='flex justify-center mb-12'>
                 <div className='w-2/5'>
                     <h2 className='font-semibold my-6 text-3xl text-center text-slate-700'>{registered ? 'Log in' : 'Register'}</h2>
 

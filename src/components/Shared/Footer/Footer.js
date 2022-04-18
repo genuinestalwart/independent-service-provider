@@ -21,7 +21,7 @@ const Footer = () => {
                 <button><FontAwesomeIcon className='bg-teal-500/25 hover:bg-teal-500/75 h-6 mx-6 p-[0.5rem] rounded-full text-xl w-6' icon={faInstagram}></FontAwesomeIcon></button>
             </div>
 
-            <p className=''>&copy;2022 <strong className='text-white'>Master Shukumar</strong>, all rights reserved.</p>
+            <p className=''>&copy;2022 <strong className='text-indigo-500'>Master Shukumar</strong>, all rights reserved.</p>
         </footer>
     );
 };

@@ -6,7 +6,7 @@ const CustomLink = ({ children, to, ...props }) => {
     const match = useMatch({ path: resolved.pathname, end: true });
 
     return (
-        <Link className={`border-b-2 border-t-4 border-t-transparent font-semibold px-4 py-2 ${match ? 'border-b-indigo-500 text-indigo-600' : 'border-b-transparent hover:text-lime-100'}`} to={to} {...props}>
+        <Link className={`border-b-2 border-t-4 border-t-transparent font-semibold px-[1rem] py-[0.5rem] ${match ? 'border-b-indigo-500 text-indigo-600' : 'border-b-transparent hover:text-lime-100'}`} to={to} {...props}>
             <div>{children}</div>
         </Link>
     );

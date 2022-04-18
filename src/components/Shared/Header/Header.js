@@ -21,7 +21,7 @@ const Header = ({ registered, user }) => {
                 <CustomLink to='/about' state={{ from: location }}>About</CustomLink>
 
                 {
-                    user ? <button className='border-t-2 border-transparent font-semibold px-4 py-2 hover:text-lime-100' onClick={logOut}><div>Log out</div></button> : <CustomLink to='/register' state={{ from: location }}>{registered ? 'Log in' : 'Register'}</CustomLink>
+                    user ? <button className='border-t-2 border-transparent font-semibold px-[1rem] py-[0.5rem] hover:text-lime-100' onClick={logOut}><div>Log out</div></button> : <CustomLink to='/register' state={{ from: location }}>{registered ? 'Log in' : 'Register'}</CustomLink>
                 }
             </nav>
         </header>
