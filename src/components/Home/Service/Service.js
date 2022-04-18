@@ -17,7 +17,7 @@ const Service = (props) => {
                     <h4 className='font-medium my-[0.5rem] text-slate-600'>Price: {price}</h4>
                     <p className='text-sm text-slate-500'>{description}</p>
                 </div>
-                <Link to='/checkout' state={{ from: location }}><button className='bg-teal-300 hover:bg-teal-400 font-semibold p-[0.5rem] active:ring ring-offset-2 ring-teal-400 rounded-lg text-indigo-600'>Check it out <FontAwesomeIcon className='ml-2' icon={faArrowRight}></FontAwesomeIcon></button></Link>
+                <Link to='/checkout' state={{ from: location }}><button className='bg-teal-300 hover:bg-teal-400 font-semibold p-[0.5rem] active:ring ring-offset-2 ring-teal-400 rounded-md text-indigo-600'>Check it out <FontAwesomeIcon className='ml-2' icon={faArrowRight}></FontAwesomeIcon></button></Link>
             </div>
 
         </div>
