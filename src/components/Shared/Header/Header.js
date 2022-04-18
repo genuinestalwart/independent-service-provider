@@ -1,14 +1,11 @@
-import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import auth from '../../../firebase.init';
 import useAuth from '../../../hooks/useAuth';
 import CustomLink from '../CustomLink/CustomLink';
 
-const Header = () => {
+const Header = ({ registered, user }) => {
     const location = useLocation();
-    const { user, logOut } = useAuth();
+    const { logOut } = useAuth();
 
     return (
         <header className='bg-teal-400 flex h-20 items-center justify-between px-16'>
@@ -24,11 +21,7 @@ const Header = () => {
                 <CustomLink to='/about' state={{ from: location }}>About</CustomLink>
 
                 {
-                    user && auth.currentUser ? <button className='border-b-2 border-transparent font-semibold px-4 py-2 hover:text-blue-600' onClick={logOut}><div>Log out</div></button> : <CustomLink to='/login' state={{ from: location }}>Log in</CustomLink>
-                }
-
-                {
-                    user && auth.currentUser ? <CustomLink to='/user' state={{ from: location }}><FontAwesomeIcon className=' text-2xl' icon={faCircleUser}></FontAwesomeIcon></CustomLink> : <CustomLink to='/register' state={{ from: location }}>Register</CustomLink>
+                    user ? <button className='border-t-2 border-transparent font-semibold px-4 py-2 hover:text-lime-100' onClick={logOut}><div>Log out</div></button> : <CustomLink to='/register' state={{ from: location }}>{registered ? 'Log in' : 'Register'}</CustomLink>
                 }
             </nav>
         </header>
