@@ -16,7 +16,7 @@ const Services = () => {
 
             <div className='gap-12 grid grid-cols-4 pt-8 pb-[1rem]'>
                 {
-                    fakeData.map(service => <Service data={service}></Service>)
+                    fakeData.map(service => <Service data={service} key={fakeData.indexOf(service)}></Service>)
                 }
             </div>
         </section>

@@ -11,17 +11,19 @@ import Register from './components/Register/Register';
 import RequireAuth from './components/RequireAuth/RequireAuth';
 import Footer from './components/Shared/Footer/Footer';
 import Header from './components/Shared/Header/Header';
-import User from './components/User/User';
+import InformToast from './components/Shared/InformToast/InformToast';
 import useAuth from './hooks/useAuth';
 
 function App() {
-	const { registered, setRegistered, user, setUser } = useAuth();
+	const { registered, setRegistered, user, setUser, info, setInfo, showToast, setShowToast } = useAuth();
 
 	return (
 		<div className="App">
 			<Header registered={registered} user={user}></Header>
 
 			<main>
+				<InformToast info={info} show={showToast}></InformToast>
+
 				<Routes>
 					<Route path='/' element={<div>
 						<Banner></Banner>
@@ -32,8 +34,7 @@ function App() {
 					<Route path='/checkout' element={<RequireAuth><Checkout></Checkout></RequireAuth>}></Route>
 					<Route path='/blogs' element={<Blogs></Blogs>}></Route>
 					<Route path='/about' element={<About></About>}></Route>
-					<Route path='/register' element={<Register registered={registered} setRegistered={setRegistered} setUser={setUser}></Register>}></Route>
-					<Route path='/user' element={<RequireAuth><User></User></RequireAuth>}></Route>
+					<Route path='/register' element={<Register registered={registered} setRegistered={setRegistered} setUser={setUser} setInfo={setInfo} setShowToast={setShowToast}></Register>}></Route>
 				</Routes>
 			</main>
 
