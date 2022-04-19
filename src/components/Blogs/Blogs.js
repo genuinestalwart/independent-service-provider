@@ -2,7 +2,7 @@ import React from 'react';
 
 const Blogs = () => {
     return (
-        <section className='gap-12 grid grid-cols-3 px-12 py-12 text-slate-600'>
+        <section className='gap-8 md:gap-12 grid grid-cols-1 md:grid-cols-3 p-8 md:p-12 text-slate-600'>
             <div className='bg-indigo-300 border-[1px] border-slate-300 hover:outline outline-teal-300 outline-4 p-[1rem] rounded-lg shadow-[0_10px_15px_-3px_rgb(0_0_0_/_0.1),_0_4px_6px_-4px_rgb(0_0_0_/_0.1)] shadow-slate-400'>
                 <h2 className='font-semibold leading-relaxed py-[0.5rem] text-xl'>What is the difference between <span className='text-indigo-500'>authorization</span> and <span className='text-indigo-500'>authentication</span>?</h2>
                 <p className='font-semibold py-[0.5rem]'>Authentication is the process of verifying a user where authorization is the process of determining what resources a user can access. Authentication is visible and sometimes customizable by the user. But authorization occurs behind the scenes and can not be customized by the user.</p>
